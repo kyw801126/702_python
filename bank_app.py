@@ -19,12 +19,14 @@ while True:
         for acc in acc_list:
             print(acc)
     elif menu == 3:
-        pass
+        bu.deposit(acc_list)
     elif menu == 4:
-        pass
+        bu.withdraw(acc_list)
     elif menu == 5:
         joblib.dump(acc_list, account_filename)
         sys.exit()
     else:
         print('잘못된 명령입니다.')
     print()
+
+kyw801126@gmail.com

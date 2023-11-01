@@ -20,4 +20,36 @@ def create_account(acc_list):
     account = Account(amount, name, ano)
     acc_list.append(account)
 #입력: 계좌번호, 금액
+def deposit(acc_list):
+    while True:
+        try:
+            cmd = input("계좌번호 금액").split()
+            ano, amount = cmd[0], int(cmd[1])
+        except:
+            print("잘못 입력되었습니다.")
+            continue
+        if amount < 0:
+            print("금액이 잘못되었습니다.")
+            continue
+        break
+    for acc in acc_list:
+        if acc.ano == ano:
+            acc.deposit(amount) # account 모듈의 Account 메소드
+            return
 
+def withdraw(acc_list):
+    while True:
+        try:
+            cmd = input("계좌번호 금액").split()
+            ano, amount = cmd[0], int(cmd[1])
+        except:
+            print("잘못입력하셨습니다. ")
+            continue
+        if amount < 0:
+            print("금액이 잘못되었습니다.")
+            continue
+        break
+    for acc in acc_list:
+        if acc.ano == ano:
+            acc.withdraw(amount)
+            return
